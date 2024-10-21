@@ -11,31 +11,21 @@
             <RowDefinition/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
-        <Menu Background="White" BorderBrush="Navy" BorderThickness="1">
-            <MenuItem Name="mi_open" Header="Смена Background" Click="MenuItem_Click" MouseDoubleClick="MenuItem_MouseDoubleClick" MouseEnter="MenuItem_MouseEnter" MouseLeave="MenuItem_MouseLeave"/>
-            <MenuItem Header="О разработчике" Click="MenuItem_Click_1" MouseEnter="MenuItem_MouseEnter_1" MouseLeave="MenuItem_MouseLeave_1"/>
-            <MenuItem Header="Закрыть окно" Click="MenuItem_Click_2" MouseEnter="MenuItem_MouseEnter_2" MouseLeave="MenuItem_MouseLeave_2"/>
-        </Menu>
-        <ToolBar Margin="559,10,10,382" Header="Панель инструментов">
-            <Button>
-                <MenuItem Header="Смена Background" Click="MenuItem_Click" MouseDoubleClick="MenuItem_MouseDoubleClick" MouseEnter="MenuItem_MouseEnter" MouseLeave="MenuItem_MouseLeave"/>
-            </Button>
-            <Button>
-                <MenuItem Header="О разработчике" Click="MenuItem_Click_1" MouseEnter="MenuItem_MouseEnter_1" MouseLeave="MenuItem_MouseLeave_1"/>
-            </Button>
-            <Button>
-                <MenuItem Header="Закрыть окно" Click="MenuItem_Click_2" MouseEnter="MenuItem_MouseEnter_2" MouseLeave="MenuItem_MouseLeave_2"/>
-            </Button>
-        </ToolBar>
-        <StatusBar Margin="0,388,0,0">
-            <TextBlock x:Name="statusTextBlock" Text="Готово" Width="713" />
-            <StatusBarItem>
-                
-            </StatusBarItem>
-        </StatusBar>
+        <StackPanel>
+            <ComboBox x:Name="Color" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Color_SelectionChanged">
+                <ComboBoxItem Content="Черный" Tag="Black"/>
+                <ComboBoxItem Content="Красный" Tag="Red"/>
+                <ComboBoxItem Content="Желтый" Tag="Yellow"/>
+                <ComboBoxItem Content="Зеленый" Tag="green"/>
+                <ComboBoxItem Content="Синий" Tag="Blue"/>
+                <Slider x:Name="Ширина"  Margin="0,0,612,0" HorizontalAlignment="Right" Width="70" Height="19" Minimum="1" Maximum="20" Value="5"/>
+                <StackPanel>
+                    <RadioButton Content="Рисование" x:Name="Draw" GroupName="Mode" IsChecked="True"/>
+                    <RadioButton Content="редактирование" x:Name="Edit" GroupName="Mode" Checked="Edit_Checked"/>
+                    <RadioButton Content="Удаление" x:Name="Delete" GroupName="Mode" Checked="Edit_Checked_1"/>
+                </StackPanel>
+            </ComboBox>
+        </StackPanel>
+        
     </Grid>
 </Window>
